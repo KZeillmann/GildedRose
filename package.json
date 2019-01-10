@@ -2,6 +2,7 @@
   "name": "gilded-rose-javascript",
   "private": true,
   "version": "2.0.0",
+  "main": "gilded-rose.js",
   "description": "Gilded Rose Kata in JavaScript",
   "repository": "git@github.com:robinpokorny/gilded-rose-javascript.git",
   "author": "Robin Pokorny <me@robinpokorny.com>",

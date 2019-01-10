@@ -1,5 +1,5 @@
-const { updateQuality, items } = require("./gilded-rose");
+const updateQuality = require("./");
 
 test("should do something", () => {
-  updateQuality();
+  updateQuality([]);
 });
