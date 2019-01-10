@@ -1,0 +1,14 @@
+{
+  "name": "gilded-rose-javascript",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Gilded Rose Kata in JavaScript",
+  "repository": "git@github.com:robinpokorny/gilded-rose-javascript.git",
+  "author": "Robin Pokorny <me@robinpokorny.com>",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "23.6.0"
+  }
+}
