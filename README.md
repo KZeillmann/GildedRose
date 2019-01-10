@@ -1,11 +1,12 @@
 # Gilded Rose Refactoring Excersise in JavaScript
 
-> **TL;DR; You inherited this NPM package for stock management. You are asked to add support for new product. Feel free to refactor as you like.**
+> **TL;DR:**
+> You inherited this NPM package for stock management. You are asked to add support for a new product. Feel free to refactor as you like.
 
 If you want to get cracking:
 
 ```
-git clone --depth=1 https://github.com/robinpokorny/gilded-rose-javascript.git
+git clone https://github.com/robinpokorny/gilded-rose-javascript.git
 cd gilded-rose-javascript
 yarn
 yarn test
@@ -13,15 +14,14 @@ yarn test
 
 ---
 
-## This version
+## Notes on this version
 
-- Functional programming friendly
-
-- Only the API of the whole package needs to preserved
-- Change the code, add dependencies,use tools, create files or folders – whatever you find helpful
+- Turned into an NPM package. Only the API of the whole package needs to preserved
+- You can change the code, add dependencies, use tooling, create files or folders – whatever you find helpful
 - [Jest](https://jestjs.io/), the unit testing framework, is provided for convinience – it is entirely optional
-
-The original text was slighlty adjusted to reflect those changes.
+- The task now uses more modern naming and other conventions
+- Part of the motivation was to make it functional programming friendly
+- The original text was slighlty adjusted to reflect these changes
 
 ## Original text
 
@@ -39,44 +39,44 @@ new category of items.
 
 First an introduction to our system:
 
-- All items have a _sellIn_ value which denotes the number of days we have to
+- All items have a `sellIn` value which denotes the number of days we have to
   sell the item
 
-- All items have a _quality_ value which denotes how valuable the item is
+- All items have a `quality` value which denotes how valuable the item is
 
 - At the end of each day our system lowers both values for every item
 
 Pretty simple, right? Well this is where it gets interesting:
 
-- Once the _sellIn_ days is less then zero, _quality_ degrades twice as fast
+- Once the `sellIn` days is less then zero, `quality` degrades twice as fast
 
-- The _quality_ of an item is never negative
+- The `quality` of an item is never negative
 
-- "Aged Brie" actually increases in _quality_ the older it gets
+- "Aged Brie" actually increases in `quality` the older it gets
 
-- The _quality_ of an item is never more than 50
+- The `quality` of an item is never more than 50
 
 - "Sulfuras", being a legendary item, never has to be sold nor does it
-  decrease in _quality_
+  decrease in `quality`
 
-- "Backstage passes", like aged brie, increases in _quality_ as it's _sellIn_
-  value decreases; _quality_ increases by 2 when there are 10 days or less
-  and by 3 when there are 5 days or less but _quality_ drops to 0 after the
+- "Backstage passes", like aged brie, increases in `quality` as it's `sellIn`
+  value decreases; `quality` increases by 2 when there are 10 days or less
+  and by 3 when there are 5 days or less but `quality` drops to 0 after the
   concert
 
 We have recently signed a supplier of conjured items. This requires an update
 to our system:
 
-- "Conjured" items degrade in _quality_ twice as fast as normal items
+- "Conjured" items degrade in `quality` twice as fast as normal items
 
-Feel free to make any changes to the _updateQuality_ method and add any new
+Feel free to make any changes to the package and add any new
 code as long as everything still works correctly. However, do not alter the
-interface of input and output of the function as this belongs to the goblin in the corner
+interface of input and output of the package as this belongs to the goblin in the corner
 who will insta-rage and one-shot you as he doesn't believe in shared code
 ownership.
 
-Just for clarification, an item can never have its _quality_ increase above 50,
-however "Sulfuras" is a legendary item and as such its _quality_ is 80 and it
+Just for clarification, an item can never have its `quality` increase above 50,
+however "Sulfuras" is a legendary item and as such its `quality` is 80 and it
 never alters.
 
 ### Sources:
@@ -84,3 +84,19 @@ never alters.
 - http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/
 - https://github.com/professor/GildedRose
 - https://github.com/guyroyse/gilded-rose-javascript
+
+## Help
+
+Please read those only after tring yourself first.
+
+<details> <summary>I have no idea what I should do</summary>
+
+Make sure you read the text properly. It asks you to add a support for a new type of product. However, the _real task_ is to refactor the current code first as it is uneasy to follow.
+
+Most people would probably work in this order:
+
+1. Write unit tests for all current product types and all edge cases
+2. Refactor the code to be more understandable; the unit tests will help prevent regressions
+3. Add unit tests for the new product, thinking about all edge cases
+4. Update the code to handle the new product and make tests pass
+   </details>
