@@ -9,12 +9,18 @@ const updateQuality = require("./");
  */
 
 test("works for the original items", () => {
-  const result = djb2a(JSON.stringify(updateQuality(JSON.parse(atob(input)))));
+  const result = djb2a(JSON.stringify(updateQuality(JSON.parse(atob(iOrig)))));
 
   expect(result).toBe(422417984);
 });
 
-const input = `WwogIHsgIm5hbWUiOiAiKzUgRGV4dGVyaXR5IFZlc3QiLCAic2VsbEluIjogMTAsI
+test("works for the Conjured items", () => {
+  const result = djb2a(JSON.stringify(updateQuality(JSON.parse(atob(iConj)))));
+
+  expect(result).toBe(3602268778);
+});
+
+const iOrig = `WwogIHsgIm5hbWUiOiAiKzUgRGV4dGVyaXR5IFZlc3QiLCAic2VsbEluIjogMTAsI
 CJxdWFsaXR5IjogMjAgfSwKICB7ICJuYW1lIjogIis1IERleHRlcml0eSBWZXN0IiwgInNlbGxJbiI6I
 C0xMCwgInF1YWxpdHkiOiAyMCB9LAogIHsgIm5hbWUiOiAiKzUgRGV4dGVyaXR5IFZlc3QiLCAic2Vsb
 EluIjogMSwgInF1YWxpdHkiOiAyMCB9LAogIHsgIm5hbWUiOiAiKzUgRGV4dGVyaXR5IFZlc3QiLCAic
@@ -39,6 +45,11 @@ CIsICJzZWxsSW4iOiA1LCAicXVhbGl0eSI6IDIwIH0sCiAgeyAibmFtZSI6ICJCYWNrc3RhZ2UgcGFzc
 iAgeyAibmFtZSI6ICJCYWNrc3RhZ2UgcGFzc2VzIHRvIGEgVEFGS0FMODBFVEMgY29uY2VydCIsICJzZ
 WxsSW4iOiA1LCAicXVhbGl0eSI6IDQ5IH0sCiAgeyAibmFtZSI6ICJCYWNrc3RhZ2UgcGFzc2VzIHRvI
 GEgVEFGS0FMODBFVEMgY29uY2VydCIsICJzZWxsSW4iOiAwLCAicXVhbGl0eSI6IDIwIH0KXQ`;
+
+const iConj = `WwogIHsgIm5hbWUiOiAiQ29uanVyZWQgTWFuYSBDYWtlIiwgInNlbGxJbiI6IDMsI
+CJxdWFsaXR5IjogNiB9LAogIHsgIm5hbWUiOiAiQ29uanVyZWQgTWFuYSBDYWtlIiwgInNlbGxJbiI6I
+C0zLCAicXVhbGl0eSI6IDYgfSwKICB7ICJuYW1lIjogIkNvbmp1cmVkIE1hbmEgQ2FrZSIsICJzZWxsS
+W4iOiAzLCAicXVhbGl0eSI6IDEgfQpd`;
 
 // https://github.com/sindresorhus/djb2a
 const djb2a = string => {
