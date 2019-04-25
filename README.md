@@ -12,6 +12,12 @@ yarn
 yarn test
 ```
 
+## Video about this Refactoring Exercise
+
+In this vlog I explain what is new and how to work on this task. [Watch the video](https://youtu.be/W056nRs4IS8).
+
+<img src="https://user-images.githubusercontent.com/68341/56716175-f1db7900-6739-11e9-92dc-c9d75e4946b2.png" alt="Video on YouTube" width="450">
+
 ---
 
 ## Notes on this version
